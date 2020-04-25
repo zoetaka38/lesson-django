@@ -24,3 +24,5 @@ Email address: hoge@huga.com
 Password: aiueo1234
 Password (again): aiueo1234
 ```
+
+http://localhost:8000/admin へアクセスして、確認してみましょう！
