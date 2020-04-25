@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <h2>ToDoリスト</h2>
+                <!-- ToDoアプリ Post処理 -->
+                <form action="{% url 'create' %}" method="post">
+                    <!-- CSRFトークンという、投稿時にセキュリティを高める仕組みを入れる -->
+                    {% csrf_token %}
+                    <div class="text">
+                            {{ form }}
+                    </div>
+                    <!-- ToDo追加ボタン -->
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" class="button">
+                            ToDo追加
+                        </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
