@@ -4,8 +4,13 @@
 
     </head>
     <body>
-        {% for post in posts %}
-            {{ post.task }}
-        {% endfor %}
+        <div>
+            {% for post in posts %}
+                {{ post.task }}
+            {% endfor %}
+        </div>
+        <div>
+            <a href="{% url 'create' %}">タスクの作成</a>
+        </div>    
     </body>
 </html>
