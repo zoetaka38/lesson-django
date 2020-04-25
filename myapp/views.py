@@ -66,3 +66,9 @@ class PostUpdateView(UpdateView):
       post.save()
  
       return HttpResponseRedirect(self.success_url)
+
+
+class PostDeleteView(DeleteView):
+    model = Post
+ 
+    success_url = reverse_lazy('index')
