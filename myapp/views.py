@@ -48,3 +48,21 @@ class PostDetailView(DetailView):
        # 表示データの追加はここで 例：
        # kwargs['sample'] = 'sample'
        return super().get_context_data(**kwargs)
+
+
+class PostUpdateView(UpdateView):
+   """
+   ビュー：詳細画面
+   """
+   model = Post
+   form_class = PostForm
+   success_url = reverse_lazy('index')
+
+   def form_valid(self, form):
+      """
+      登録処理
+      """
+      post = form.save(commit=False)
+      post.save()
+ 
+      return HttpResponseRedirect(self.success_url)
