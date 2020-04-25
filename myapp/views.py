@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -33,3 +33,18 @@ class PostCreateView(CreateView):
        post.save()
 
        return HttpResponseRedirect(self.success_url)
+
+
+class PostDetailView(DetailView):
+   """
+   ビュー：詳細画面
+   """
+   model = Post
+
+   def get_context_data(self, **kwargs):
+       """
+       表示データの設定
+       """
+       # 表示データの追加はここで 例：
+       # kwargs['sample'] = 'sample'
+       return super().get_context_data(**kwargs)

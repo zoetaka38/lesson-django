@@ -6,7 +6,7 @@
     <body>
         <div>
             {% for post in posts %}
-                {{ post.task }}
+                <a href="{% url 'detail' post.pk %}">{{ post.task }}</a>
             {% endfor %}
         </div>
         <div>
